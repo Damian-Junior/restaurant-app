@@ -1,0 +1,38 @@
+.loader {
+       margin: 20px 0;
+       margin-top: 300px;
+       padding: 30px 50px;
+       text-align: center;
+}
+.site-layout-content {
+     height: 100vh;
+    background-image:  url('reserve.jpg') ;
+    background-position: left right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
+    background-color:rgb(3, 3, 24);
+    
+   .menu{
+       padding-top: 20px;
+       background-color: transparent;
+       border:none;
+       margin-top:20px;
+       font-size: 1.2em;
+       
+       .menu_item{
+        text-decoration: none;
+        color:#fff;
+        
+        &:hover{
+            
+                 
+        }
+        &:hover{
+            text-decoration: none;
+        }
+       }
+    
+   }
+}

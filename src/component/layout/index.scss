@@ -1,0 +1,67 @@
+/** @format */
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+.site-layout-content {
+  height: 100vh;
+  background-image: url("https://previews.123rf.com/images/golubovystock/golubovystock1801/golubovystock180101193/94462143-pate-restaurant-gourmet-food-on-dark-background-delicious-delicacy.jpg");
+  background-position: left right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-color: rgb(3, 3, 24);
+  position: relative;
+  h1{
+      font-size: 3em;
+      color:#fff;
+
+  }
+  .active{
+    background-image: url('./nav_bg.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+  }  
+  .menu {
+    background-color: transparent;
+    border: none;
+    padding-top: 40px;
+    font-size: 1.2em;
+    position: fixed;
+    display: flex;
+    justify-content: space-between ;
+    align-content: center;
+    height: 125px;
+    z-index: 1000;
+    width: 100%;
+    .sub-menu{
+      background-color:rgb(3, 3, 24);
+    }
+    img{
+      height: 20vmin;
+      transform: translateY(-60px) translateX(-20px);
+      // position: fixed;
+      // top:0;
+      // left: 0;
+     }
+    .menu_item {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2em;
+      height: min-content;
+      border: none;
+
+      &:hover {
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.drawer {
+  margin: 0;
+  padding: 0;
+  border: 1px solid green;
+}

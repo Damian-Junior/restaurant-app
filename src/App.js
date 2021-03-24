@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
 
-function App() {
+import "antd/dist/antd.css";
+import React, { Suspense, lazy } from "react";
+import "./App.css";
+import ApplicationRoute from "./config/ApplicationRoute";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Spin } from "antd";
+import Provider from "./provider";
+
+const App = () => {
+  const Foods = React.lazy(() => import("./component/categories/Food"));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <Router>
+        <ApplicationRoute />
+        <Suspense fallback={<Spin size="large" />}>
+          <Switch>
+            <Route exact path="/food/:foodname" component={Foods} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,42 @@
+/** @format */
+
+.image-div {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 80%;
+  width: 80%;
+  justify-content: space-evenly;
+  align-content: center;
+  padding-top: 40px;
+  margin-top: 40px;
+  margin: auto;
+  .ant-card {
+    margin-right: 40px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 20px lightgray;
+    padding: 10px;
+    img {
+      box-shadow: 0px 0px 5px lightgray;
+    }
+    .ant-btn {
+      margin-top: 10px;
+      background-image: linear-gradient(to right, white 50%, orange 50%);
+      background-size: 200%;
+      background-position: left bottom;
+      transition: background 0.5s ease-out;
+      color: #ffe123;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 500;
+      box-shadow: 0 0;
+      padding: 0px 20.5px;
+      height: 42px;
+      &:hover,
+      &:focus {
+        background-position: right bottom;
+        color: #fff;
+      }
+    }
+  }
+}
