@@ -26,10 +26,12 @@ const Foods = (props) => {
       recipeName: food.recipe.label,
       image: food.recipe.image,
       price: food.recipe.calories,
+      quantity: 1,
     };
-    items.push(cart);
+    // check if the content is already in the cart
+    let check = items.find((items) => items.price == cart.price);
+    check ? check.quantity++ : items.push(cart);
     showDrawer();
-    console.log(food, food.recipe.label, food.recipe.image, "foood:::::::::");
   };
 
   useEffect(() => {

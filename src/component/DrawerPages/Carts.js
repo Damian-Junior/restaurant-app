@@ -42,8 +42,12 @@ const Carts = () => {
               color="green"
               style={{ fontSize: "1.5em", marginLeft: "10px" }}
             >
-              &#8358; {Math.round(item?.price)}
+              &#8358; {Math.round(item?.price)* item?.quantity}
             </Tag>
+            <Tag color="green" >
+              <span>quantity: </span>{item?.quantity}
+            </Tag>
+
             <h3>{item?.recipeName}</h3>
           </div>
         );
