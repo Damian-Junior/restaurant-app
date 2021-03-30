@@ -1,5 +1,5 @@
 /** @format */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DrawerBoard, { showDrawer } from "../../common/drawer/index";
 import { Menu, Col, Row } from "antd";
 import "./index.scss";
@@ -14,7 +14,8 @@ import {
 } from "@ant-design/icons";
 
 import Reserve from "../DrawerPages/Reserve";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import myState from "../../context";
 
 const { SubMenu } = Menu;
 
@@ -26,7 +27,15 @@ const ContentBox = () => {
   const changeBackground = () =>
     window.scrollY >= 1000 ? setNavBar(true) : setNavBar(false);
   window.addEventListener("scroll", changeBackground);
-
+  const { search, setSearch } = useContext(myState);
+  const onChange = (event) => {
+    setSearch(event.target.value);
+  };
+  const history = useHistory();
+  const onSubmit = (event) => {
+    event.preventDefault();
+    history.push(`/search/${search}`);
+  };
   return (
     <>
       <div className="site-layout-content">
@@ -71,7 +80,7 @@ const ContentBox = () => {
                 icon={<UserAddOutlined style={{ fontSize: "1em" }} />}
                 className="menu_item"
               >
-                Sign in
+                View Cart 
               </Menu.Item>
               <SubMenu
                 key="4"
@@ -95,16 +104,27 @@ const ContentBox = () => {
             </Menu>
           </Col>
         </Row>
+        <form onSubmit={onSubmit}>
+          <h1>THE PERMIAN</h1>
+          <input
+            type="text"
+            placeholder="Search your Recipe..."
+            value={search}
+            onChange={onChange}
+          />
+        </form>
       </div>
+
       <DrawerBoard
         onClose={onClose}
         state={state}
         placement={"left"}
         title={"Reserve a table"}
-        width ={600}
+        width={600}
       >
         <Reserve />
       </DrawerBoard>
+      
     </>
   );
 };

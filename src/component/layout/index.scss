@@ -1,5 +1,5 @@
 /** @format */
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
 
 .site-layout-content {
   height: 100vh;
@@ -11,18 +11,17 @@
   background-attachment: fixed;
   background-color: rgb(3, 3, 24);
   position: relative;
-  h1{
-      font-size: 3em;
-      color:#fff;
-
+  h1 {
+    font-size: 3em;
+    color: #fff;
   }
-  .active{
-    background-image: url('./nav_bg.png');
+  .active {
+    background-image: url("./nav_bg.png");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
-  }  
+  }
   .menu {
     background-color: transparent;
     border: none;
@@ -30,21 +29,21 @@
     font-size: 1.2em;
     position: fixed;
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     align-content: center;
     height: 125px;
     z-index: 1000;
     width: 100%;
-    .sub-menu{
-      background-color:rgb(3, 3, 24);
+    .sub-menu {
+      background-color: rgb(3, 3, 24);
     }
-    img{
+    img {
       height: 20vmin;
       transform: translateY(-60px) translateX(-20px);
       // position: fixed;
       // top:0;
       // left: 0;
-     }
+    }
     .menu_item {
       text-decoration: none;
       color: #fff;
@@ -57,6 +56,21 @@
       &:hover {
         text-decoration: none;
       }
+    }
+  }
+  form {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 40%;
+    input {
+      padding: 15px;
+      width: 100%;
+      border-radius: 20px;
+      outline: none;
+      font-size: 1.5em;
+      background-color:rgba(0, 0, 0, 0.0);
+      color: #fff;
     }
   }
 }

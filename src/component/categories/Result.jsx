@@ -1,22 +1,24 @@
 /** @format */
-
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import myState from "../../context/index";
 import QueryForm from "../../common/queryForm";
-const Foods = (props) => {
-  const [data, setData] = useState();
-  const {match: {params}} = props;
-    useEffect(() => {
-    let foodType = params.foodname;
+
+const Result = (props) => {
+  const [data, setData] = useState([]);
+  const { search } = useContext(myState);
+
+  useEffect(() => {
     let APP_ID = "4de28cec";
     let APP_KEY = "c8940da60cec35462125bc09cf7ca344";
     axios
       .get(
-        `https://api.edamam.com/search?
-         app_key=${APP_KEY}&app_id=${APP_ID}&q=${foodType}&from=3&to=15`,
+        `https://api.edamam.com/search?app_key=${APP_KEY}&app_id=${APP_ID}&q=${search}&from=3&to=15`,
         {
           headers: {
-            'X-Requested-With': 'XMLHttpRequest',
+            key: "X-Requested-With",
+            value: "XMLHttpRequest",
+            description: "",
           },
         }
       )
@@ -25,12 +27,12 @@ const Foods = (props) => {
         console.log(response.data.hits);
       })
       .catch((err) => console.log(err.message));
-  }, [data, params.foodname]);
-  console.log(data, params.foodname);
+  }, [data, search]);
+  console.log(data, search);
   return (
     <>
-    <QueryForm data = {data} />
+      <QueryForm data={data} />
     </>
-  )
+  );
 };
-export default Foods;
+export default Result;
